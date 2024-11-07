@@ -118,12 +118,14 @@ video {
   width: 10px;
   height: 10px;
   background: var(--black);
+  animation: pong-ball 5s linear infinite alternate;
 }
 
 .pong-paddle {
   width: 10px;
   height: 80px;
   background: var(--black);
+  animation: pong-paddle1 5s linear infinite alternate;
 }
 
 @keyframes loader {
@@ -170,4 +172,40 @@ video {
     opacity: 0%;
     transform: translateX(30px) translateY(-55px);
   }
+}
+
+@keyframes pong-ball {
+  from {
+    transform: translateX(-225px) translateY(-90px);
+  }
+
+  to {
+    transform: translateX(225px) translateY(90px);
+  }
+}
+
+@keyframes pong-paddle1 {
+  0% {
+    transform: translateY(-90px);
+  }
+
+  80% {
+    transform: translateY(45spx);
+  }
+  100% {
+    transform: translateY(-90px);
+  }
+}
+@keyframes pong-paddle2 {
+  from {
+    transform: translateY(45px);
+  }
+
+  to {
+    transform: translateY(90px);
+  }
+}
+
+.pong-paddle :nth-child(2) {
+  animation: pong-paddle2 3s linear infinite alternate;
 }
